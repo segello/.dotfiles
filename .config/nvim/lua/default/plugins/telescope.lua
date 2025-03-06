@@ -11,7 +11,7 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
-		local cursor_theme_width = 0.5
+		local cursor_theme_width = 0.98
 		local cursor_theme_height = 0.3
 
 		telescope.setup({
@@ -24,17 +24,19 @@ return {
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
 				},
+				prompt_prefix = "  ",
+				selection_caret = "> ",
 			},
 			pickers = {
 				find_files = {
 					theme = "dropdown",
 					previewer = false,
-					prompt_prefix = "󰱼 > ",
+					prompt_prefix = "󰱼  ",
 				},
 				git_files = {
 					theme = "dropdown",
 					previewer = false,
-					prompt_prefix = ">> ",
+					prompt_prefix = "  ",
 				},
 				buffers = {
 					theme = "ivy",
@@ -42,6 +44,7 @@ return {
 					preview_title = false,
 					prompt_title = "Buffers",
 					sort_lastused = true,
+					-- ignore_current_buffer = true,
 					initial_mode = "normal",
 					mappings = {
 						n = {
@@ -53,7 +56,7 @@ return {
 					theme = "ivy",
 					results_title = false,
 					preview_title = false,
-					prompt_title = "  Git Status",
+					prompt_title = " Git Status",
 					sort_lastused = true,
 					initial_mode = "normal",
 				},
@@ -66,7 +69,7 @@ return {
 					},
 				},
 				live_grep = {
-					prompt_prefix = " > ",
+					prompt_prefix = "  ",
 				},
 				lsp_references = {
 					theme = "cursor",

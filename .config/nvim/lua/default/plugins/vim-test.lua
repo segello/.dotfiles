@@ -12,7 +12,3 @@ return {
 		-- vim.cmd("let test#strategy = 'vimux'")
 	end,
 }
-
--- available commands
--- nmap <silent> <leader>l :TestLast<CR>
--- nmap <silent> <leader>g :TestVisit<CR>

@@ -11,15 +11,15 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				flavour = "frappe",
-				transparent_background = true,
+				-- transparent_background = true,
 				custom_highlights = function(colors)
 					return {
-						-- LineNr = { fg = colors.overlay2 }, -- Use a brighter overlay color
-						Comment = { fg = colors.overlay1 }, -- Slightly darker for comments
+						LineNr = { fg = colors.overlay2 }, -- Use a brighter overlay color
+						-- Comment = { fg = colors.overlay1 }, -- Slightly darker for comments
 						NormalFloat = { bg = colors.mantle },
 						Pmenu = { bg = colors.mantle, fg = colors.text }, -- Completion menu background
 						-- PmenuSel = { bg = colors.blue, fg = colors.crust }, -- Selected menu item
-						ColorColumn = { bg = colors.mantle },
+						-- ColorColumn = { bg = colors.mantle },
 					}
 				end,
 			})

@@ -53,9 +53,13 @@ vim.keymap.set("n", "<leader>el", 'oif err != nil {<CR>}<Esc>O.logger.Error("err
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 
-vim.cmd([[cnoreabbrev git Git]])
+-- alternate file
+vim.keymap.set("n", "<leader><Enter>", "<C-^>", { desc = "Alternate file" })
 
--- Example keybinding to toggle nvim-tree
+-- tab through buffers
+vim.keymap.set("n", "<TAB>", ":bnext<CR>", { silent = true })
+
+-- nvim-tree
 -- vim.api.nvim_set_keymap("n", "<leader>ej", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>et", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>ef", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })

@@ -39,3 +39,11 @@ require("lazy").setup({
 
 -- catppuccin, tokyonight, visual_studio_code
 vim.cmd.colorscheme("catppuccin")
+
+-- dynamically toggle transparent background if catppuccin theme
+vim.keymap.set("n", "<leader>b", function()
+	local cat = require("catppuccin")
+	cat.options.transparent_background = not cat.options.transparent_background
+	cat.compile()
+	vim.cmd.colorscheme(vim.g.colors_name)
+end)
