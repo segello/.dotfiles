@@ -20,8 +20,10 @@ $haskell\
 $python\
 [](fg:green bg:teal)\
 $docker_context\
-[](fg:teal bg:purple)\
+[](fg:teal bg:lavender)\
 $time\
+[](fg:lavender bg:purple)\
+$cmd_duration\
 [](fg:purple)\
 $line_break\
 [╰─](white)$character
@@ -200,10 +202,16 @@ format = '[[ $symbol( $context) ](fg:base bg:teal)]($style)'
 disabled = false
 time_format = "%I:%M %p"
 style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:purple)]($style)'
+format = '[[  $time ](fg:mantle bg:lavender)]($style)'
 
 [line_break]
 disabled = false
+
+[cmd_duration]
+min_time = 500  # Show command duration if it took more than 500ms
+style = "bg:purple"
+format = '[[ 󱦟$duration ](fg:mantle bg:purple)]($style)'
+
 
 # [character]
 # disabled = false
