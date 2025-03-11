@@ -3,12 +3,12 @@ format = """
 [](surface0)\
 $os\
 $username\
-[](bg:blue fg:surface0)\
+[](bg:blue fg:surface0)\
 $directory\
-[](fg:blue bg:peach)\
+[](fg:blue bg:peach)\
 $git_branch\
 $git_status\
-[](fg:peach bg:green)\
+[](fg:peach bg:green)\
 $c\
 $rust\
 $golang\
@@ -18,11 +18,11 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:green bg:teal)\
+[](fg:green bg:teal)\
 $docker_context\
-[](fg:teal bg:purple)\
+[](fg:teal bg:purple)\
 $time\
-[ ](fg:purple)\
+[](fg:purple)\
 $line_break\
 [╰─](white)$character
 """

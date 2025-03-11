@@ -14,10 +14,11 @@ else
   exit 1
 fi
 
+set +e
 echo "Installing TPM..."
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-echo "🔗 Creating symlinks for Git config..."
+echo "🔗 Creating symlinks for config..."
 if [ -L "$HOME/.config" ] || [ -e "$HOME/.config" ]; then
   echo "⚠️  Removing existing ~/.config..."
   rm -rf "$HOME/.config"
@@ -32,10 +33,6 @@ if [ -L "$HOME/.zshrc" ] || [ -e "$HOME/.zshrc" ]; then
 fi
 echo "✅ Creating symlink: ~/.zshrc → ~/.dotfiles/.zshrc"
 ln -s "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
-
-# Symlink
-ln -sf ~/.dotfiles/.config ~/.config
-ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 
 echo "✅ Setup complete!"
 

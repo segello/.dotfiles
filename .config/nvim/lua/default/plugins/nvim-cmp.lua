@@ -71,10 +71,25 @@ return {
 
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
-				format = lspkind.cmp_format({
-					maxwidth = 50,
-					ellipsis_char = "...",
-				}),
+				fields = { "abbr", "kind", "menu" }, -- Ensure correct fields are used
+				expandable_indicator = true, -- Show indicators for expandable items
+				format = function(entry, vim_item)
+					vim_item = require("lspkind").cmp_format({
+						maxwidth = 50,
+						ellipsis_char = "...",
+                        -- mode = 'symbol',
+					})(entry, vim_item)
+
+					vim_item.menu = ({
+						nvim_lsp = "[LSP]",
+						luasnip = "[luasnip]",
+						buffer = "[Buffer]",
+						path = "[Path]",
+						nvim_lua = "[Lua]",
+					})[entry.source.name] or "[Other]"
+
+					return vim_item
+				end,
 			},
 		})
 	end,
